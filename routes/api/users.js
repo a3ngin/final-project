@@ -6,7 +6,7 @@ router.route("/")
   .get(usersController.getUser);
 
 /* Authentication Routes */
-router.route("/register")
+router.route("/users/register")
   .post(usersController.register);
 
 router.route("/login")
