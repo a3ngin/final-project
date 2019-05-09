@@ -53,8 +53,10 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mern_authenticate_me"
+
 /* === Mongoose Connection === */
-mongoose.connect('mongodb://localhost/mern_authenticate_me',{ useNewUrlParser: true });
+mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
 
 /* === Error Handling === */
 
